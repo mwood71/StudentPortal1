@@ -30,41 +30,45 @@
                     <p><b>Question: </b>@Model.QuestionChoicesVM.Questions[x].Question</p>
                     @for (var y = 0; y < Model.QuestionChoicesVM.Choices.Count; y++)
                     {
-                <ul>
-                    Answers:
-                    @if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
-                    {
-                        <li>@Model.QuestionChoicesVM.Choices[y].Choice1</li>
+                        @if (x == y)
+                        {
+                            <ul>
+                                Answers:
+                                @if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                                {
+                                    <li>@Model.QuestionChoicesVM.Choices[y].Choice1</li>
 
-                    }
-                    @if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
-                    {
-                        <li>@Model.QuestionChoicesVM.Choices[y].Choice2</li>
+                                }
+                                @if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                                {
+                                    <li>@Model.QuestionChoicesVM.Choices[y].Choice2</li>
 
-                    }
-                    @if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
-                    {
-                        <li>@Model.QuestionChoicesVM.Choices[y].Choice3</li>
+                                }
+                                @if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                                {
+                                    <li>@Model.QuestionChoicesVM.Choices[y].Choice3</li>
 
-                    }
-                    @if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
-                    {
-                        <li>@Model.QuestionChoicesVM.Choices[y].Choice4</li>
+                                }
+                                @if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                                {
+                                    <li>@Model.QuestionChoicesVM.Choices[y].Choice4</li>
 
-                    }
-                    @if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
-                    {
-                        <li>@Model.QuestionChoicesVM.Choices[y].Choice5</li>
+                                }
+                                @if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                                {
+                                    <li>@Model.QuestionChoicesVM.Choices[y].Choice5</li>
 
-                    }
-                    @if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
-                    {
-                        <li>@Model.QuestionChoicesVM.Choices[y].Choice6</li>
+                                }
+                                @if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                                {
+                                    <li>@Model.QuestionChoicesVM.Choices[y].Choice6</li>
 
-                    }
+                                }
 
 
-                </ul>
+                            </ul>
+                        }
+
 
                     }
 
@@ -72,7 +76,7 @@
 
                 </div>
                 <div class="col-6 text-right">
-                    <a asp-route-Id="@Model.QuestionChoicesVM.Questions[x].Id" asp-page="Edit" class="btn btn-primary text-white">Edit</a>
+                    <a asp-route-Id="@Model.QuestionChoicesVM.Questions[x].Id" asp-page="EditQuestion" class="btn btn-primary text-white">Edit</a>
                     <a asp-route-Id="@Model.QuestionChoicesVM.Questions[x].Id" asp-page="Delete" class="btn btn-danger text-white">Delete</a>
 
                 </div>
