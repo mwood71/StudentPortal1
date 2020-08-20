@@ -1,0 +1,519 @@
+﻿@page
+@model Portal.Pages.Survey.IndexModel
+@{
+    ViewData["Title"] = "Survey";
+    
+}
+
+
+
+    <h4 style="color:#EDF5E1; font-family: 'Bebas Neue', cursive;" class="display-4 text-center p-5">Collegiate Recovery Survey</h4>
+    <div style="border: 1px solid;border-color: #05386B" class="container pt-5 pb-5 pl-3 pr-3">
+
+        @if (Model.QuestionChoicesVM.Questions.Count == 0)
+        {
+            <p style="color: #5CDB95;font-family: 'Bebas Neue', cursive;font-family: 'Lora', serif;">There are currently no survey questions.</p>
+        }
+        else
+        {
+    <form method="post">
+
+        @for (var x = 0; x < Model.QuestionChoicesVM.Questions.Count; x++)
+        {
+        <div class="form-group">
+            <p style="color: #EDF5E1;font-family: 'Bebas Neue', cursive;font-family: 'Lora', serif;"><b>@Model.QuestionChoicesVM.Questions[x].Question</b></p>
+            @for (var y = 0; y < Model.QuestionChoicesVM.Choices.Count; y++)
+            {
+                if (x == y && x == 0)
+                {
+                    if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                    {
+                        <input id="option1" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice1" asp-for="Answers.Answer1" />
+                        <label for="option1">@Model.QuestionChoicesVM.Choices[x].Choice1</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                    {
+                        <input id="option2" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice2" asp-for="Answers.Answer1" />
+                        <label for="option2">@Model.QuestionChoicesVM.Choices[x].Choice2</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                    {
+                        <input id="option3" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice3" asp-for="Answers.Answer1" />
+                        <label for="option3">@Model.QuestionChoicesVM.Choices[x].Choice3</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                    {
+                        <input id="option4" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice4" asp-for="Answers.Answer1" />
+                        <label for="option4">@Model.QuestionChoicesVM.Choices[x].Choice4</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                    {
+                        <input id="option5" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice5" asp-for="Answers.Answer1" />
+                        <label for="option5">@Model.QuestionChoicesVM.Choices[x].Choice5</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                    {
+                        <input id="option6" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice6" asp-for="Answers.Answer1" />
+                        <label for="option6">@Model.QuestionChoicesVM.Choices[x].Choice6</label>
+
+                    }
+
+
+
+                }
+                if (x == y && x == 1)
+                {
+                    if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                    {
+                        <input id="option1" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice1" asp-for="Answers.Answer2" />
+                        <label for="option1">@Model.QuestionChoicesVM.Choices[x].Choice1</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                    {
+                        <input id="option2" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice2" asp-for="Answers.Answer2" />
+                        <label for="option2">@Model.QuestionChoicesVM.Choices[x].Choice2</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                    {
+                        <input id="option3" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice3" asp-for="Answers.Answer2" />
+                        <label for="option3">@Model.QuestionChoicesVM.Choices[x].Choice3</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                    {
+                        <input id="option4" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice4" asp-for="Answers.Answer2" />
+                        <label for="option4">@Model.QuestionChoicesVM.Choices[x].Choice4</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                    {
+                        <input id="option5" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice5" asp-for="Answers.Answer2" />
+                        <label for="option5">@Model.QuestionChoicesVM.Choices[x].Choice5</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                    {
+                        <input id="option6" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice6" asp-for="Answers.Answer2" />
+                        <label for="option6">@Model.QuestionChoicesVM.Choices[x].Choice6</label>
+
+                    }
+
+
+
+                }
+                if (x == y && x == 2)
+                {
+                    if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                    {
+                        <input id="option1" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice1" asp-for="Answers.Answer3" />
+                        <label for="option1">@Model.QuestionChoicesVM.Choices[x].Choice1</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                    {
+                        <input id="option2" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice2" asp-for="Answers.Answer3" />
+                        <label for="option2">@Model.QuestionChoicesVM.Choices[x].Choice2</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                    {
+                        <input id="option3" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice3" asp-for="Answers.Answer3" />
+                        <label for="option3">@Model.QuestionChoicesVM.Choices[x].Choice3</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                    {
+                        <input id="option4" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice4" asp-for="Answers.Answer3" />
+                        <label for="option4">@Model.QuestionChoicesVM.Choices[x].Choice4</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                    {
+                        <input id="option5" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice5" asp-for="Answers.Answer3" />
+                        <label for="option5">@Model.QuestionChoicesVM.Choices[x].Choice5</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                    {
+                        <input id="option6" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice6" asp-for="Answers.Answer3" />
+                        <label for="option6">@Model.QuestionChoicesVM.Choices[x].Choice6</label>
+
+                    }
+
+
+
+                }
+                if (x == y && x == 3)
+                {
+                    if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                    {
+                        <input id="option1" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice1" asp-for="Answers.Answer4" />
+                        <label for="option1">@Model.QuestionChoicesVM.Choices[x].Choice1</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                    {
+                        <input id="option2" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice2" asp-for="Answers.Answer4" />
+                        <label for="option2">@Model.QuestionChoicesVM.Choices[x].Choice2</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                    {
+                        <input id="option3" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice3" asp-for="Answers.Answer4" />
+                        <label for="option3">@Model.QuestionChoicesVM.Choices[x].Choice3</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                    {
+                        <input id="option4" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice4" asp-for="Answers.Answer4" />
+                        <label for="option4">@Model.QuestionChoicesVM.Choices[x].Choice4</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                    {
+                        <input id="option5" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice5" asp-for="Answers.Answer4" />
+                        <label for="option5">@Model.QuestionChoicesVM.Choices[x].Choice5</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                    {
+                        <input id="option6" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice6" asp-for="Answers.Answer4" />
+                        <label for="option6">@Model.QuestionChoicesVM.Choices[x].Choice6</label>
+
+                    }
+
+
+
+                }
+                if (x == y && x == 4)
+                {
+                    if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                    {
+                        <input id="option1" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice1" asp-for="Answers.Answer5" />
+                        <label for="option1">@Model.QuestionChoicesVM.Choices[x].Choice1</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                    {
+                        <input id="option2" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice2" asp-for="Answers.Answer5" />
+                        <label for="option2">@Model.QuestionChoicesVM.Choices[x].Choice2</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                    {
+                        <input id="option3" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice3" asp-for="Answers.Answer5" />
+                        <label for="option3">@Model.QuestionChoicesVM.Choices[x].Choice3</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                    {
+                        <input id="option4" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice4" asp-for="Answers.Answer5" />
+                        <label for="option4">@Model.QuestionChoicesVM.Choices[x].Choice4</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                    {
+                        <input id="option5" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice5" asp-for="Answers.Answer5" />
+                        <label for="option5">@Model.QuestionChoicesVM.Choices[x].Choice5</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                    {
+                        <input id="option6" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice6" asp-for="Answers.Answer5" />
+                        <label for="option6">@Model.QuestionChoicesVM.Choices[x].Choice6</label>
+
+                    }
+
+
+
+                }
+                if (x == y && x == 5)
+                {
+                    if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                    {
+                        <input id="option1" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice1" asp-for="Answers.Answer6" />
+                        <label for="option1">@Model.QuestionChoicesVM.Choices[x].Choice1</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                    {
+                        <input id="option2" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice2" asp-for="Answers.Answer6" />
+                        <label for="option2">@Model.QuestionChoicesVM.Choices[x].Choice2</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                    {
+                        <input id="option3" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice3" asp-for="Answers.Answer6" />
+                        <label for="option3">@Model.QuestionChoicesVM.Choices[x].Choice3</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                    {
+                        <input id="option4" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice4" asp-for="Answers.Answer6" />
+                        <label for="option4">@Model.QuestionChoicesVM.Choices[x].Choice4</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                    {
+                        <input id="option5" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice5" asp-for="Answers.Answer6" />
+                        <label for="option5">@Model.QuestionChoicesVM.Choices[x].Choice5</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                    {
+                        <input id="option6" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice6" asp-for="Answers.Answer6" />
+                        <label for="option6">@Model.QuestionChoicesVM.Choices[x].Choice6</label>
+
+                    }
+
+
+
+                }
+                if (x == y && x == 6)
+                {
+                    if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                    {
+                        <input id="option1" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice1" asp-for="Answers.Answer7" />
+                        <label for="option1">@Model.QuestionChoicesVM.Choices[x].Choice1</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                    {
+                        <input id="option2" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice2" asp-for="Answers.Answer7" />
+                        <label for="option2">@Model.QuestionChoicesVM.Choices[x].Choice2</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                    {
+                        <input id="option3" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice3" asp-for="Answers.Answer7" />
+                        <label for="option3">@Model.QuestionChoicesVM.Choices[x].Choice3</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                    {
+                        <input id="option4" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice4" asp-for="Answers.Answer7" />
+                        <label for="option4">@Model.QuestionChoicesVM.Choices[x].Choice4</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                    {
+                        <input id="option5" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice5" asp-for="Answers.Answer7" />
+                        <label for="option5">@Model.QuestionChoicesVM.Choices[x].Choice5</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                    {
+                        <input id="option6" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice6" asp-for="Answers.Answer7" />
+                        <label for="option6">@Model.QuestionChoicesVM.Choices[x].Choice6</label>
+
+                    }
+
+
+
+                }
+                if (x == y && x == 7)
+                {
+                    if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                    {
+                        <input id="option1" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice1" asp-for="Answers.Answer8" />
+                        <label for="option1">@Model.QuestionChoicesVM.Choices[x].Choice1</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                    {
+                        <input id="option2" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice2" asp-for="Answers.Answer8" />
+                        <label for="option2">@Model.QuestionChoicesVM.Choices[x].Choice2</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                    {
+                        <input id="option3" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice3" asp-for="Answers.Answer8" />
+                        <label for="option3">@Model.QuestionChoicesVM.Choices[x].Choice3</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                    {
+                        <input id="option4" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice4" asp-for="Answers.Answer8" />
+                        <label for="option4">@Model.QuestionChoicesVM.Choices[x].Choice4</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                    {
+                        <input id="option5" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice5" asp-for="Answers.Answer8" />
+                        <label for="option5">@Model.QuestionChoicesVM.Choices[x].Choice5</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                    {
+                        <input id="option6" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice6" asp-for="Answers.Answer8" />
+                        <label for="option6">@Model.QuestionChoicesVM.Choices[x].Choice6</label>
+
+                    }
+
+
+
+                }
+                if (x == y && x == 8)
+                {
+                    if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                    {
+                        <input id="option1" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice1" asp-for="Answers.Answer9" />
+                        <label for="option1">@Model.QuestionChoicesVM.Choices[x].Choice1</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                    {
+                        <input id="option2" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice2" asp-for="Answers.Answer9" />
+                        <label for="option2">@Model.QuestionChoicesVM.Choices[x].Choice2</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                    {
+                        <input id="option3" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice3" asp-for="Answers.Answer9" />
+                        <label for="option3">@Model.QuestionChoicesVM.Choices[x].Choice3</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                    {
+                        <input id="option4" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice4" asp-for="Answers.Answer9" />
+                        <label for="option4">@Model.QuestionChoicesVM.Choices[x].Choice4</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                    {
+                        <input id="option5" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice5" asp-for="Answers.Answer9" />
+                        <label for="option5">@Model.QuestionChoicesVM.Choices[x].Choice5</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                    {
+                        <input id="option6" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice6" asp-for="Answers.Answer9" />
+                        <label for="option6">@Model.QuestionChoicesVM.Choices[x].Choice6</label>
+
+                    }
+
+
+
+                }
+                if (x == y && x == 9)
+                {
+                    if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                    {
+                        <input id="option1" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice1" asp-for="Answers.Answer10" />
+                        <label for="option1">@Model.QuestionChoicesVM.Choices[x].Choice1</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                    {
+                        <input id="option2" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice2" asp-for="Answers.Answer10" />
+                        <label for="option2">@Model.QuestionChoicesVM.Choices[x].Choice2</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                    {
+                        <input id="option3" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice3" asp-for="Answers.Answer10" />
+                        <label for="option3">@Model.QuestionChoicesVM.Choices[x].Choice3</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                    {
+                        <input id="option4" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice4" asp-for="Answers.Answer10" />
+                        <label for="option4">@Model.QuestionChoicesVM.Choices[x].Choice4</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                    {
+                        <input id="option5" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice5" asp-for="Answers.Answer10" />
+                        <label for="option5">@Model.QuestionChoicesVM.Choices[x].Choice5</label>
+
+                    }
+
+                    if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                    {
+                        <input id="option6" type="radio" value="@Model.QuestionChoicesVM.Choices[x].Choice6" asp-for="Answers.Answer10" />
+                        <label for="option6">@Model.QuestionChoicesVM.Choices[x].Choice6</label>
+
+                    }
+
+
+
+                }
+            }
+
+        </div>
+
+        }
+
+        <div class="form-group">
+            <input style="background-color:#05386B" type="submit" value="Submit" class="btn text-white"/>
+
+        </div>
+       
+
+    </form>
+        }
+
+
+
+
+
+
+    </div>
+  
+

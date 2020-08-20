@@ -1,0 +1,21 @@
+﻿@page
+@model Portal.Pages.Admin.Survey.CreateQuestionModel
+@{
+    ViewData["Title"] = "Admin - Survey";
+}
+
+<form method="post">
+    <div class="container">
+        <div class="form-group">
+            <label>Question:</label>
+            <input asp-for="Questions.Question" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary"/>
+
+        </div>
+
+    </div>
+
+</form>

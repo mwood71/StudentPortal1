@@ -1,0 +1,89 @@
+﻿@page
+@model Portal.Pages.Admin.Survey.IndexModel
+@{
+    ViewData["Title"] = "Admin - Survey";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2>Survey</h2>
+
+        </div>
+        <div class="col-6 text-right">
+            <a asp-page="CreateQuestion" class="btn btn-primary">Create</a>
+
+        </div>
+
+    </div>
+
+    @if (Model.QuestionChoicesVM.Questions.Count == 0)
+    {
+        <p>Currently no questions.</p>
+    }
+    else
+    {
+        @for (var x = 0; x < Model.QuestionChoicesVM.Questions.Count; x++)
+        {
+            <div class="row">
+                <div class="col-6">
+                    <p><b>Question: </b>@Model.QuestionChoicesVM.Questions[x].Question</p>
+                    @for (var y = 0; y < Model.QuestionChoicesVM.Choices.Count; y++)
+                    {
+                <ul>
+                    Answers:
+                    @if (Model.QuestionChoicesVM.Choices[y].Choice1 != null)
+                    {
+                        <li>@Model.QuestionChoicesVM.Choices[y].Choice1</li>
+
+                    }
+                    @if (Model.QuestionChoicesVM.Choices[y].Choice2 != null)
+                    {
+                        <li>@Model.QuestionChoicesVM.Choices[y].Choice2</li>
+
+                    }
+                    @if (Model.QuestionChoicesVM.Choices[y].Choice3 != null)
+                    {
+                        <li>@Model.QuestionChoicesVM.Choices[y].Choice3</li>
+
+                    }
+                    @if (Model.QuestionChoicesVM.Choices[y].Choice4 != null)
+                    {
+                        <li>@Model.QuestionChoicesVM.Choices[y].Choice4</li>
+
+                    }
+                    @if (Model.QuestionChoicesVM.Choices[y].Choice5 != null)
+                    {
+                        <li>@Model.QuestionChoicesVM.Choices[y].Choice5</li>
+
+                    }
+                    @if (Model.QuestionChoicesVM.Choices[y].Choice6 != null)
+                    {
+                        <li>@Model.QuestionChoicesVM.Choices[y].Choice6</li>
+
+                    }
+
+
+                </ul>
+
+                    }
+
+
+
+                </div>
+                <div class="col-6 text-right">
+                    <a asp-route-Id="@Model.QuestionChoicesVM.Questions[x].Id" asp-page="Edit" class="btn btn-primary text-white">Edit</a>
+                    <a asp-route-Id="@Model.QuestionChoicesVM.Questions[x].Id" asp-page="Delete" class="btn btn-danger text-white">Delete</a>
+
+                </div>
+
+            </div>
+
+        }
+
+
+    }
+
+
+
+</div>

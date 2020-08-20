@@ -1,0 +1,48 @@
+﻿@page
+@model Portal.Pages.Admin.Survey.CreateChoicesModel
+@{
+    ViewData["Title"] = "Admin - Survey";
+}
+
+
+<form method="post">
+    <input type="hidden" asp-for="Choices.QuestionID"/>
+    <div class="container">
+        <div class="form-group">
+            <label>Choice 1:</label>
+            <input asp-for="Choices.Choice1" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Choice 2:</label>
+            <input asp-for="Choices.Choice2" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Choice 3:</label>
+            <input asp-for="Choices.Choice3" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Choice 4:</label>
+            <input asp-for="Choices.Choice4" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Choice 5:</label>
+            <input asp-for="Choices.Choice5" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Choice 6:</label>
+            <input asp-for="Choices.Choice6" class="form-control" />
+
+        </div>
+        <div class="form-group">
+           <input type="submit" value="Submit" class="btn btn-primary"/>
+
+        </div>
+
+    </div>
+
+</form>
