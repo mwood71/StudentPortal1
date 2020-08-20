@@ -1,0 +1,49 @@
+﻿@page
+@model Portal.Pages.Leadership.IndexModel
+@{
+    ViewData["Title"] = "Leadership";
+}
+
+<div class="container">
+    <h4 style="color:#EDF5E1; font-family: 'Bebas Neue', cursive;" class="display-4 text-center p-5">Leadership</h4>
+
+   
+    <section class="team-section text-center my-5">
+       
+        <div class="row">
+
+            @if (Model.LeadershipList.Count == 0)
+            {
+                <p style="color: #5CDB95;font-family: 'Bebas Neue', cursive;font-family: 'Lora', serif;">Currently no members listed.</p>
+            }
+
+            else
+            {
+                @foreach (var item in Model.LeadershipList)
+                {
+                    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+                        <div class="avatar mx-auto">
+                            <img src="@item.url" class="rounded-circle z-depth-1" style="width:200px; height:auto"
+                                 alt="Sample avatar">
+                        </div>
+                        <h5 style="color:#EDF5E1; font-family: 'Bebas Neue', cursive;font-family: 'Lora', serif;" class="font-weight-bold mt-4 mb-3">@item.Name</h5>
+                        <p style="color: #5CDB95;font-family: 'Bebas Neue', cursive;font-family: 'Lora', serif;" class="text-uppercase blue-text"><strong>@item.Position</strong></p>
+
+                    </div>
+
+                }
+
+            }
+
+
+
+
+
+        </div>
+       
+
+    </section>
+  
+
+
+</div>

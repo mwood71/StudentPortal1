@@ -1,0 +1,34 @@
+﻿@page
+@model Portal.Pages.Admin.Leadership.DeleteModel
+@{
+    ViewData["Title"] = "Admin - Leadership";
+}
+
+
+<form method="post">
+    <div class="container">
+
+        <input type="hidden" asp-for="Leadership.Id"/>
+        <div class="form-group">
+            <label>Name:</label>
+            <input asp-for="Leadership.Name" class="form-control" disabled />
+
+        </div>
+        <div class="form-group">
+            <label>Position:</label>
+            <input asp-for="Leadership.Position" class="form-control" disabled />
+
+        </div>
+        <div class="form-group">
+            <label>Picture URL:</label>
+            <input asp-for="Leadership.url" class="form-control" disabled />
+
+        </div>
+        <div class="form-group">
+            <input class="btn btn-danger" type="submit" value="Delete" />
+
+        </div>
+
+    </div>
+
+</form>

@@ -15,5 +15,6 @@ namespace Portal.Data
         }
 
         public DbSet<Newsletter> Newsletters { get; set; }
+        public DbSet<Leadership> Leaderships { get; set; }
     }
 }
