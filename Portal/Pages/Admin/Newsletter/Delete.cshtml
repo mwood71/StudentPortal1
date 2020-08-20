@@ -1,0 +1,23 @@
+﻿@page
+@model Portal.Pages.Admin.Newsletter.DeleteModel
+@{
+    ViewData["Title"] = "Admin - Newsletter";
+}
+
+<form method="post">
+    
+    <div class="container">
+        <div class="form-group">
+            <input type="hidden" asp-for="Newsletter.Id"/>
+            <label>URL:</label>
+            <input class="form-control" asp-for="Newsletter.Url" disabled/>
+
+        </div>
+        <div class="form-group">
+            <input class="btn btn-danger" type="submit" value="Delete" />
+
+        </div>
+
+    </div>
+
+</form>

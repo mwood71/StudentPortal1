@@ -1,0 +1,37 @@
+﻿@page
+@model Portal.Pages.Admin.Newsletter.IndexModel
+@{
+    ViewData["Title"] = "Admin - Newsletter";
+}
+
+<div class="container">
+    <div class="row">
+
+        <h2 class="p-5">Newsletter</h2>
+    </div>
+
+    @if (Model.Newsletter != null)
+    {
+        <div class="row">
+
+           
+            <div class="col-6">
+                <p>@Model.Newsletter.Url</p>
+
+            </div>
+            <div class="col-6 text-right">
+                <a asp-route-Id="@Model.Newsletter.Id" asp-page="Delete" class="btn btn-danger">Delete</a>
+
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="row">
+
+            <a asp-page="Create" class="btn btn-primary">Create Newsletter link</a>
+
+        </div>
+    }
+</div>
