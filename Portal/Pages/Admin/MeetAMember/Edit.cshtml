@@ -1,0 +1,78 @@
+﻿@page
+@model Portal.Pages.Admin.MeetAMember.EditModel
+@{
+    ViewData["Title"] = "Admin - Meet A Member";
+}
+
+<form method="post">
+    <div class="container">
+
+        <input type="hidden" asp-for="MeetAMember.Id" />
+        <div class="form-group">
+            <label>Title:</label>
+            <input asp-for="MeetAMember.Title" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Author:</label>
+            <input asp-for="MeetAMember.Author" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Paragraph 1:</label>
+            <input asp-for="MeetAMember.Para1" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Paragraph 2:</label>
+            <input asp-for="MeetAMember.Para2" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Paragraph 3:</label>
+            <input asp-for="MeetAMember.Para3" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Paragraph 4:</label>
+            <input asp-for="MeetAMember.Para4" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Paragraph 5:</label>
+            <input asp-for="MeetAMember.Para5" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Paragraph 6:</label>
+            <input asp-for="MeetAMember.Para6" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Paragraph 7:</label>
+            <input asp-for="MeetAMember.Para7" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Paragraph 8:</label>
+            <input asp-for="MeetAMember.Para8" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Paragraph 9:</label>
+            <input asp-for="MeetAMember.Para9" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Paragraph 10:</label>
+            <input asp-for="MeetAMember.Para10" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <input class="btn btn-success" type="submit" value="Submit Edit" />
+
+        </div>
+
+    </div>
+
+</form>

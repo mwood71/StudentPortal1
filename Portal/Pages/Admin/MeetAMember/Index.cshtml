@@ -1,0 +1,39 @@
+﻿@page
+@model Portal.Pages.Admin.MeetAMember.IndexModel
+@{
+    ViewData["Title"] = "Admin - Meet A Member";
+}
+
+<div class="container">
+    @if (Model.MeetAMember == null)
+    {
+    <div class="row">
+        <div class="col-6">
+            <h2>Meet A Member</h2>
+
+        </div>
+        <div class="col-6 text-right">
+            <a asp-page="Create" class="btn btn-primary">Add Post</a>
+
+        </div>
+
+    </div>
+    }
+
+    <div class="row">
+        <h2>Meet A Member</h2>
+
+        <div class="col-6">
+            <p>Title: @Model.MeetAMember.Title</p>
+            <p>Author: @Model.MeetAMember.Author</p>
+
+        </div>
+        <div class="col-6 text-right">
+            <a asp-route-Id="@Model.MeetAMember.Id" asp-page="Edit" class="btn btn-primary">Edit</a>
+            <a asp-route-Id="@Model.MeetAMember.Id" asp-page="Delete" class="btn btn-danger">Delete</a>
+
+        </div>
+
+    </div>
+
+</div>

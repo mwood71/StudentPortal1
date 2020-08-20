@@ -19,5 +19,7 @@ namespace Portal.Data
         public DbSet<Questions> Questions { get; set; }
         public DbSet<Answers> Answers { get; set; }
         public DbSet<Choices> Choices { get; set; }
+        public DbSet<MeetAMember> MeetAMembers { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }
