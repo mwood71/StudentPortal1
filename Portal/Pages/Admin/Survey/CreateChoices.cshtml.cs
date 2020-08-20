@@ -21,7 +21,7 @@ namespace Portal.Pages.Admin.Survey
         [BindProperty]
         public Choices Choices { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
             Choices = new Choices();
             Choices.QuestionID = id;
