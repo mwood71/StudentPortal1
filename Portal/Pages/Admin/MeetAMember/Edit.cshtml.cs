@@ -37,6 +37,7 @@ namespace Portal.Pages.Admin.MeetAMember
             var meetAMemberDB = await _db.MeetAMembers.FirstOrDefaultAsync(a => a.Id == MeetAMember.Id);
             meetAMemberDB.Title = MeetAMember.Title;
             meetAMemberDB.Author = MeetAMember.Author;
+            meetAMemberDB.PictureURL = MeetAMember.PictureURL;
             meetAMemberDB.Para1 = MeetAMember.Para1;
             meetAMemberDB.Para2 = MeetAMember.Para2;
             meetAMemberDB.Para3 = MeetAMember.Para3;

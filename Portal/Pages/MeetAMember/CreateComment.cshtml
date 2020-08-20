@@ -1,0 +1,36 @@
+﻿@page
+@model Portal.Pages.MeetAMember.CreateCommentModel
+@{
+    ViewData["Title"] = "Comment";
+}
+
+
+
+<form method="post" novalidate="novalidate">
+
+    <div style="border: 1px solid;border-color: #5CDB95" class="container p-5">
+        <h2 style="color: #5CDB95;font-family: 'Bebas Neue', cursive;" class="display-4">Create Comment</h2><hr>
+        <label style="color: #5CDB95">Name:</label>
+        <input class="form-control" asp-for="Comment.Name">
+        <span asp-validation-for="Comment.Name" class="text-danger"></span><br />
+
+        <label style="color: #5CDB95">Comment:</label>
+        <textarea asp-for="Comment.UserComment" class="form-control" rows="3"></textarea><br />
+        <span asp-validation-for="Comment.UserComment" class="text-danger"></span><br />
+
+        <input style="background-color: #05386B;color: #EDF5E1" class="btn" type="submit" value="Submit Comment">
+
+
+    </div>
+
+
+</form>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+
+
+
+
+

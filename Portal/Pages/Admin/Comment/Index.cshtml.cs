@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Portal.Data;
-using Portal.Models.ViewModel;
+using Portal.Models;
 
-namespace Portal.Pages.MeetAMember
+namespace Portal.Pages.Admin.Comment
 {
     public class IndexModel : PageModel
     {
@@ -18,16 +18,12 @@ namespace Portal.Pages.MeetAMember
         {
             _db = db;
         }
-        [BindProperty]
-        public MeetAMemberCommentVM VM { get; set; }
+        public IList<Models.Comment> Comments { get; set; }
+
 
         public async Task<IActionResult> OnGetAsync()
         {
-            VM = new MeetAMemberCommentVM()
-            {
-                MeetAMember = await _db.MeetAMembers.FirstOrDefaultAsync(),
-                CommentList = await _db.Comments.ToListAsync()
-            };
+            Comments = await _db.Comments.ToListAsync();
 
             return Page();
         }
