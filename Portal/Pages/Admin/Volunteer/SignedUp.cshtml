@@ -1,0 +1,47 @@
+﻿@page
+@model Portal.Pages.Admin.Volunteer.SignedUpModel
+@{
+    ViewData["Title"] = "Volunteer";
+}
+
+<div class="container">
+    @if (Model.VolunteerVM.VolunteerEvent != null)
+    {
+        <h2>@Model.VolunteerVM.VolunteerEvent.Name</h2>
+
+    }
+
+    @if (Model.VolunteerVM.VolunteerList.Count == 0)
+    {
+        <p>There are no members signed up.</p>
+    }
+    else
+    {
+        @foreach (var item in Model.VolunteerVM.VolunteerList)
+        {
+            <div class="row">
+                <div class="col-6">
+                    <p>@item.Name</p>
+
+                </div>
+                <div class="col-6 text-right">
+                    <a asp-route-Id="@item.Id" class="btn btn-danger" asp-page="DeleteSignUp">Delete</a>
+
+                </div>
+
+            </div>
+
+
+        }
+
+    }
+
+    <div class="form-group">
+        <a asp-page="Index" class="btn btn-primary">Back To List</a>
+
+    </div>
+
+
+
+
+</div>

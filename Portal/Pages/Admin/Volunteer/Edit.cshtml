@@ -1,0 +1,76 @@
+﻿@page
+@model Portal.Pages.Admin.Volunteer.EditModel
+@{
+}
+
+
+<form method="post">
+
+    <div class="container">
+        <input asp-for="VolunteerEvent.Id" type="hidden"/>
+        <div class="form-group">
+            <label>Name:</label>
+            <input asp-for="VolunteerEvent.Name" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Description:</label>
+            <input asp-for="VolunteerEvent.Description" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Date:</label>
+            <input id="datepicker" asp-for="VolunteerEvent.Date" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Start time:</label>
+            <input id="timepicker" asp-for="VolunteerEvent.StartTime" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>End time:</label>
+            <input id="timepick" asp-for="VolunteerEvent.EndTime" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Address:</label>
+            <input asp-for="VolunteerEvent.Address" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>City:</label>
+            <input asp-for="VolunteerEvent.City" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Zip:</label>
+            <input asp-for="VolunteerEvent.Zip" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>State:</label>
+            <input asp-for="VolunteerEvent.State" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+
+        </div>
+
+    </div>
+
+</form>
+
+
+@section Scripts{
+    <script>
+    $(function () {
+        $("#datepicker").datepicker({ minDate: 1, maxDate: "+1Y" });
+        $("#timepicker").timepicker({ 'minTime': '7:00 AM', 'maxTime': '11:00 PM', step: '30' });
+        $("#timepick").timepicker({ 'minTime': '7:00 AM', 'maxTime': '11:00 PM', step: '30' });
+    });
+
+
+    </script>
+}

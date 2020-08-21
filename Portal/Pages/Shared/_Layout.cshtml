@@ -6,6 +6,8 @@
     <title>@ViewData["Title"]</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -41,6 +43,7 @@
                                 <a class="dropdown-item" asp-page="/Admin/Survey/Index">Survey</a>
                                 <a class="dropdown-item" asp-page="/Admin/MeetAMember/Index">Meet A Member</a>
                                 <a class="dropdown-item" asp-page="/Admin/Comment/Index">Comment</a>
+                                <a class="dropdown-item" asp-page="/Admin/Volunteer/Index">Volunteer</a>
 
                             </div>
                         </li>
@@ -57,12 +60,14 @@
 
     <footer style="background-color:#5CDB95" class="footer text-white">
         <div class="container">
-            &copy; 2020 - CRC Student Portal 
+            &copy; 2020 - CRC Student Portal
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)

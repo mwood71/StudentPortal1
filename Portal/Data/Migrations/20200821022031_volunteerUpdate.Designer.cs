@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Portal.Data;
 
 namespace Portal.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200821022031_volunteerUpdate")]
+    partial class volunteerUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -418,26 +420,6 @@ namespace Portal.Data.Migrations
                     b.ToTable("Questions");
                 });
 
-            modelBuilder.Entity("Portal.Models.Volunteer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("VolunteerEventID")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("VolunteerEventID");
-
-                    b.ToTable("Volunteers");
-                });
-
             modelBuilder.Entity("Portal.Models.VolunteerEvent", b =>
                 {
                     b.Property<int>("Id")
@@ -533,15 +515,6 @@ namespace Portal.Data.Migrations
                     b.HasOne("Portal.Models.Questions", "Questions")
                         .WithMany()
                         .HasForeignKey("QuestionID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Portal.Models.Volunteer", b =>
-                {
-                    b.HasOne("Portal.Models.VolunteerEvent", "VolunteerEvent")
-                        .WithMany()
-                        .HasForeignKey("VolunteerEventID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
