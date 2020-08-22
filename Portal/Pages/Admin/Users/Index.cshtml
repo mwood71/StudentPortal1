@@ -1,0 +1,30 @@
+﻿@page
+@model Portal.Pages.Admin.Users.IndexModel
+@{
+    ViewData["Title"] = "Admin - Users";
+}
+
+<div class="container">
+    @if (Model.UserList.Count == 0)
+    {
+        <p>Currently no users</p>
+    }
+    else
+    {
+        foreach (var user in Model.UserList)
+        {
+            <div class="row">
+                <div class="col-6">
+                    <p>@user.Email</p>
+
+                </div>
+                <div class="col-6 text-right">
+                    <a asp-route-Id="@user.Id" asp-page="Delete" class="btn btn-danger">Delete</a>
+
+                </div>
+
+            </div>
+        }
+    }
+
+</div>
