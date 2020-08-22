@@ -1,0 +1,77 @@
+﻿@page
+@model Portal.Pages.Meeting.MeetingDays.ThursdayMeetingsModel
+@{
+    ViewData["Title"] = "Meetings";
+}
+
+
+<div class="container">
+
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1 class="display-3" style="color: #EDF5E1;font-family: 'Bebas Neue', cursive;">Meetings</h1>
+
+        </div>
+
+
+    </div>
+
+
+    <ul class="nav nav-tabs ">
+        <li class="nav-item">
+            <a asp-page="../Index" style="border-color:#EDF5E1;background-color: #05386B;color: #EDF5E1" class="nav-link">All</a>
+        </li>
+        <li class="nav-item">
+            <a style="border-color: #EDF5E1; background-color: #05386B; color: #EDF5E1" class="nav-link" asp-page="MondayMeetings">Monday</a>
+        </li>
+        <li class="nav-item">
+            <a style="border-color: #EDF5E1; background-color: #05386B; color: #EDF5E1" class="nav-link" asp-page="TuesdayMeetings">Tuesday</a>
+        </li>
+        <li class="nav-item">
+            <a style="border-color: #EDF5E1; background-color: #05386B; color: #EDF5E1" class="nav-link" asp-page="WednesdayMeetings">Wednesday</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active">Thursday</a>
+        </li>
+        <li class="nav-item">
+            <a style="border-color: #EDF5E1; background-color: #05386B; color: #EDF5E1" class="nav-link" asp-page="FridayMeetings">Friday</a>
+        </li>
+        <li class="nav-item">
+            <a style="border-color: #EDF5E1; background-color: #05386B; color: #EDF5E1" class="nav-link" asp-page="SaturdayMeetings">Saturday</a>
+        </li>
+        <li class="nav-item">
+            <a style="border-color: #EDF5E1; background-color: #05386B; color: #EDF5E1" class="nav-link" asp-page="SundayMeetings">Sunday</a>
+        </li>
+    </ul>
+
+    <div class="pt-5">
+
+        @foreach (var item in Model.Meetings)
+        {
+            <div class="row">
+                <div class="col-6">
+                    <h2 style="color: #5CDB95;font-family: 'Lora', serif;">@item.Name</h2>
+                    <p style="color: #5CDB95;font-family: 'Lora', serif;">
+                        Day: @item.DayOfWeek<br>
+                        Time: @item.StartTime.ToString("hh:mm tt") - @item.EndTime.ToString("hh:mm tt")
+                    </p>
+
+                </div>
+                <div class="col-6 text-right">
+                    <a style="background-color: #05386B;color: #EDF5E1" class="btn" asp-route-Id="@item.Id" asp-page="../Details">
+                        Details
+                    </a>
+
+                </div>
+
+            </div>
+            <hr>
+
+        }
+
+
+
+    </div>
+
+</div>
+

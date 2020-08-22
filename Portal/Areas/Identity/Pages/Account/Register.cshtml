@@ -1,0 +1,50 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+
+
+
+
+    <form method="post">
+
+        <div style="border: 1px solid;border-color: #5CDB95" class="container p-5">
+            <h2 style="color: #5CDB95;font-family: 'Bebas Neue', cursive;" class="display-4">Register</h2><hr>
+            <label style="color: #5CDB95">Email:</label>
+            <input class="form-control" asp-for="Input.Email" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+            <br>
+            <label style="color: #5CDB95">Password:</label>
+            <input class="form-control" type="password" asp-for="Input.Password" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+            <br>
+            <label style="color: #5CDB95">Confirm Password:</label>
+            <input class="form-control" type="password" asp-for="Input.ConfirmPassword" />
+            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+
+            <br>
+            <label style="color: #5CDB95">Create Admin account:</label>
+            <input type="checkbox" asp-for="Input.IsAdmin" value="true">
+            <br>
+
+            <input style="background-color: #05386B;color: #EDF5E1" class="btn" type="submit" value="Register">
+
+
+        </div>
+
+
+    </form>
+
+
+
+
+
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

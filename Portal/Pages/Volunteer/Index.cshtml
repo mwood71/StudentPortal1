@@ -5,44 +5,60 @@
 }
 
 
-    <div class="container">
+<div class="container">
 
-        <div class="row pt-4">
-            <div class="col-6">
-                <h1 style="color: #EDF5E1;font-family: 'Bebas Neue', cursive;">Volunteer Event</h1>
-
-            </div>
-
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1 style="color: #EDF5E1;font-family: 'Bebas Neue', cursive;">Volunteer Event</h1>
 
         </div>
-        <hr>
-
-        <div class="row">
-            <div class="col-6">
-                <h2 style="color: #5CDB95;font-family: 'Lora', serif;">Volunteer Event</h2>
-                <p style="color: #5CDB95;font-family: 'Lora', serif;">
-                    Date: 2020/08/15<br>
-                    Time: 08:00 AM - 09:00 AM
-                </p>
-
-            </div>
-            <div class="col-6 text-right">
-
-                <a style="background-color: #5CDB95;color: #EDF5E1" class="btn" href="/Volunteers/Join?Id=1">
-                    Join
-                </a>
-                <a style="background-color: #05386B;color: #EDF5E1" class="btn" href="/Volunteers/Details?Id=1">
-                    Details
-                </a>
-
-            </div>
-
-        </div>
-        <hr>
-
 
 
     </div>
+    <hr>
+
+    @if (Model.VolunteerEvents.Count == 0)
+    {
+        <p style="color: #5CDB95;font-family: 'Lora', serif;">There are currently no volunteer events.</p>
+    }
+    else
+    {
+        @foreach (var item in Model.VolunteerEvents)
+        {
+            <div class="row">
+                <div class="col-6">
+                    <h2 style="color: #5CDB95;font-family: 'Lora', serif;">@item.Name</h2>
+                    <p style="color: #5CDB95;font-family: 'Lora', serif;">
+                        Date: @item.Date.ToString("MM/dd/yyyy")<br>
+                        Time: @item.StartTime.ToString("hh:mm tt") - @item.EndTime.ToString("hh:mm tt")
+                    </p>
+
+                </div>
+                <div class="col-6 text-right">
+
+                    <a asp-route-Id="@item.Id" asp-page="Join" style="background-color: #5CDB95;color: #EDF5E1" class="btn" >
+                        Join
+                    </a>
+                    <a asp-route-Id="@item.Id" asp-page="Details" style="background-color: #05386B;color: #EDF5E1" class="btn" >
+                        Details
+                    </a>
+
+                </div>
+
+            </div>
+            <hr>
+
+        }
+
+    }
+
+
+
+
+
+
+
+</div>
 
 
 

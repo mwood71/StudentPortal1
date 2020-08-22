@@ -1,0 +1,35 @@
+﻿@page
+@model Portal.Pages.Meeting.DetailsModel
+@{
+    ViewData["Title"] = "Meetings";
+}
+
+
+
+
+
+    <div style="border: 1px solid;border-color: #5CDB95" class="container p-5">
+        <h2 style="color: #5CDB95;font-family: 'Bebas Neue', cursive;" class="display-4">Meeting Details</h2><hr>
+
+        <label style="color: #5CDB95;font-family: 'Lora', serif;">Name:</label>
+        <p style="color: #EDF5E1;font-family: 'Lora', serif;">@Model.Meeting.Name</p><br>
+
+        <label style="color: #5CDB95;font-family: 'Lora', serif;">Day of the week:</label>
+        <p style="color: #EDF5E1;font-family: 'Lora', serif;">@Model.Meeting.DayOfWeek</p><br>
+
+        <label style="color: #5CDB95;font-family: 'Lora', serif;">Time:</label>
+        <p style="color: #EDF5E1;font-family: 'Lora', serif;">@Model.Meeting.StartTime.ToString("hh:mm tt") - @Model.Meeting.EndTime.ToString("hh:mm tt")</p><br>
+
+        <label style="color: #5CDB95;font-family: 'Lora', serif;">Address:</label>
+        <p style="color: #EDF5E1;font-family: 'Lora', serif;">
+            @Model.Meeting.Address<br>
+            @Model.Meeting.City, @Model.Meeting.State<br>@Model.Meeting.Zip
+        </p><br>
+
+        <a style="background-color: #05386B;color: #EDF5E1" class="btn" asp-page="Index">Back to List</a>
+
+
+    </div>
+
+
+

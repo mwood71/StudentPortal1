@@ -23,5 +23,6 @@ namespace Portal.Data
         public DbSet<Comment> Comments { get; set; }
         public DbSet<VolunteerEvent> VolunteerEvents { get; set; }
         public DbSet<Volunteer> Volunteers { get; set; }
+        public DbSet<Meeting> Meetings { get; set; }
     }
 }

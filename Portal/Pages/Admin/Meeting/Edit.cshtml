@@ -1,0 +1,82 @@
+﻿@page
+@model Portal.Pages.Admin.Meeting.EditModel
+@{
+    ViewData["Title"] = "Admin - Meetings";
+}
+
+
+
+<form method="post">
+
+    <div class="container">
+        <input asp-for="Meeting.Id" type="hidden"/>
+        <div class="form-group">
+            <label>Name:</label>
+            <input asp-for="Meeting.Name" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Day of the week:</label>
+            <select asp-for="Meeting.DayOfWeek">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+
+        </div>
+        <div class="form-group">
+            <label>Start time:</label>
+            <input id="timepicker" asp-for="Meeting.StartTime" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>End time:</label>
+            <input id="timepick" asp-for="Meeting.EndTime" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Address:</label>
+            <input asp-for="Meeting.Address" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>City:</label>
+            <input asp-for="Meeting.City" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>Zip:</label>
+            <input asp-for="Meeting.Zip" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label>State:</label>
+            <input asp-for="Meeting.State" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+
+        </div>
+
+    </div>
+
+</form>
+
+
+@section Scripts{
+    <script>
+    $(function () {
+        $("#datepicker").datepicker({ minDate: 1, maxDate: "+1Y" });
+        $("#timepicker").timepicker({ 'minTime': '7:00 AM', 'maxTime': '11:00 PM', step: '30' });
+        $("#timepick").timepicker({ 'minTime': '7:00 AM', 'maxTime': '11:00 PM', step: '30' });
+    });
+
+
+    </script>
+}
+

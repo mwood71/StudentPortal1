@@ -8,22 +8,22 @@ using Microsoft.EntityFrameworkCore;
 using Portal.Data;
 using Portal.Models;
 
-namespace Portal.Pages.Volunteer
+namespace Portal.Pages.Meeting
 {
-    public class IndexModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly ApplicationDbContext _db;
 
-        public IndexModel(ApplicationDbContext db)
+        public DetailsModel(ApplicationDbContext db)
         {
             _db = db;
         }
-        
-        public IList<VolunteerEvent> VolunteerEvents { get; set; }
+        [BindProperty]
+        public Models.Meeting Meeting { get; set; }
 
-        public async Task<IActionResult> OnGetAsync()
+        public async Task<IActionResult> OnGetAsync(int id)
         {
-            VolunteerEvents = await _db.VolunteerEvents.OrderBy(a=>a.Date).ToListAsync();
+            Meeting = await _db.Meetings.FirstOrDefaultAsync(a => a.Id == id);
 
             return Page();
         }

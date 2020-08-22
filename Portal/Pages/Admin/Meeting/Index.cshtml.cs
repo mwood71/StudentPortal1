@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Portal.Data;
 using Portal.Models;
 
-namespace Portal.Pages.Volunteer
+namespace Portal.Pages.Admin.Meeting
 {
     public class IndexModel : PageModel
     {
@@ -18,12 +18,11 @@ namespace Portal.Pages.Volunteer
         {
             _db = db;
         }
-        
-        public IList<VolunteerEvent> VolunteerEvents { get; set; }
+        public IList<Models.Meeting> Meeting { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
-            VolunteerEvents = await _db.VolunteerEvents.OrderBy(a=>a.Date).ToListAsync();
+            Meeting = await _db.Meetings.OrderBy(a=>a.StartTime.Hour).ToListAsync();
 
             return Page();
         }

@@ -1,0 +1,67 @@
+﻿@page
+@model Portal.Pages.Volunteer.DetailsModel
+@{
+    ViewData["Title"] = "Volunteer";
+}
+
+
+
+@if (Model.VolunteerVM == null)
+{
+    <p style="color: #EDF5E1;font-family: 'Lora', serif;">Currently no details.</p>
+
+}
+else
+{
+    <div style="border: 1px solid;border-color: #5CDB95" class="container p-5">
+        <h2 style="color: #5CDB95;font-family: 'Bebas Neue', cursive;" class="display-4">Volunteer Details</h2><hr>
+
+        <label style="color: #5CDB95;font-family: 'Lora', serif;">Name:</label>
+        <p style="color: #EDF5E1;font-family: 'Lora', serif;">@Model.VolunteerVM.VolunteerEvent.Name</p><br>
+
+        <label style="color: #5CDB95;font-family: 'Lora', serif;">Description:</label>
+        <p style="color: #EDF5E1;font-family: 'Lora', serif;">@Model.VolunteerVM.VolunteerEvent.Description</p><br>
+
+        <label style="color: #5CDB95;font-family: 'Lora', serif;">Date:</label>
+        <p style="color: #EDF5E1;font-family: 'Lora', serif;">@Model.VolunteerVM.VolunteerEvent.Date.ToString("MM/dd/yyyy")</p><br>
+
+        <label style="color: #5CDB95;font-family: 'Lora', serif;">Time:</label>
+        <p style="color: #EDF5E1;font-family: 'Lora', serif;">@Model.VolunteerVM.VolunteerEvent.StartTime.ToString("hh:mm tt") - @Model.VolunteerVM.VolunteerEvent.EndTime.ToString("hh:mm tt")</p><br>
+
+        <label style="color: #5CDB95;font-family: 'Lora', serif;">Address:</label>
+        <p style="color: #EDF5E1;font-family: 'Lora', serif;">
+            @Model.VolunteerVM.VolunteerEvent.Address<br>
+            @Model.VolunteerVM.VolunteerEvent.City, @Model.VolunteerVM.VolunteerEvent.State<br>@Model.VolunteerVM.VolunteerEvent.Zip
+        </p><br>
+
+        <label style="color: #5CDB95;font-family: 'Lora', serif;">Already Signed Up:</label>
+        <div class="row pb-3">
+            <div class="col-lg-4 col-md-8 col-sm-12">
+                <ul style="list-style-type: circle;color: #EDF5E1;font-family: 'Lora', serif;">
+                    @if (Model.VolunteerVM.VolunteerList.Count == 0)
+                    {
+                        <li>Currently no one is signed up.</li>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model.VolunteerVM.VolunteerList)
+                        {
+                            <li>@item.Name</li>
+                        }
+                    }
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <a style="background-color: #05386B;color: #EDF5E1" class="btn" asp-page="Index">Back to List</a>
+
+
+    </div>
+
+}
+
+

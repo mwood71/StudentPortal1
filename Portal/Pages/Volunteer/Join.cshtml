@@ -1,0 +1,37 @@
+﻿@page
+@model Portal.Pages.Volunteer.JoinModel
+@{
+    ViewData["Title"] = "Volunteer";
+}
+
+
+
+<form method="post">
+
+    <div style="border: 1px solid;border-color: #5CDB95" class="container p-5">
+        <h2 style="color: #5CDB95;font-family: 'Bebas Neue', cursive;" class="display-4">Volunteer Sign Up</h2><hr>
+        <input type="hidden" asp-for="Volunteers.VolunteerEventID" />
+
+        <label style="color: #5CDB95">Name:</label>
+        <input class="form-control" asp-for="Volunteers.Name" /><br />
+        <span asp-validation-for="Volunteers.Name" class="text-danger"></span><br/>
+
+
+
+        <input style="background-color: #05386B;color: #EDF5E1" class="btn" type="submit" value="Sign Up">
+
+
+    </div>
+
+
+</form>
+
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+
+
+
+
+
