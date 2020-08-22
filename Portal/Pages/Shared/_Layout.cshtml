@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Portal.Utility
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,52 +15,63 @@
 </head>
 <body style="background-color: #008080">
     <header>
-        <nav style="background-color:#008080" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
-            <div class="container">
-                <a style="font-family: 'Bebas Neue', cursive; font-family: 'Lora', serif; color: #EDF5E1" class="navbar-brand text-white" asp-area="" asp-page="/Index">CRC</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/Leadership/Index">Leadership</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/Survey/Index">Survey</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/MeetAMember/Index">Meet A Member</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/Volunteer/Index">Volunteer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/Meeting/Index">Meetings</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" asp-page="/Admin/Newsletter/Index">Newsletter</a>
-                                <a class="dropdown-item" asp-page="/Admin/Leadership/Index">Leadership</a>
-                                <a class="dropdown-item" asp-page="/Admin/Survey/Index">Survey</a>
-                                <a class="dropdown-item" asp-page="/Admin/MeetAMember/Index">Meet A Member</a>
-                                <a class="dropdown-item" asp-page="/Admin/Comment/Index">Comment</a>
-                                <a class="dropdown-item" asp-page="/Admin/Volunteer/Index">Volunteer</a>
-                                <a class="dropdown-item" asp-page="/Admin/Meeting/Index">Meetings</a>
+        @if (User.IsInRole(SD.AdminEndUser) || User.IsInRole(SD.StudentEndUser))
+        {
+            <nav style="background-color:#008080" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
+                <div class="container">
+                    <a style="font-family: 'Bebas Neue', cursive; font-family: 'Lora', serif; color: #EDF5E1" class="navbar-brand text-white" asp-area="" asp-page="/Index">CRC</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <partial name="_LoginPartial" />
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/Leadership/Index">Leadership</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/Survey/Index">Survey</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/MeetAMember/Index">Meet A Member</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/Volunteer/Index">Volunteer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="" asp-page="/Meeting/Index">Meetings</a>
+                            </li>
+
+                            @if (User.IsInRole(SD.AdminEndUser))
+                            {
+                                <li class="nav-item dropdown">
+                                    <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" asp-page="/Admin/Newsletter/Index">Newsletter</a>
+                                        <a class="dropdown-item" asp-page="/Admin/Leadership/Index">Leadership</a>
+                                        <a class="dropdown-item" asp-page="/Admin/Survey/Index">Survey</a>
+                                        <a class="dropdown-item" asp-page="/Admin/MeetAMember/Index">Meet A Member</a>
+                                        <a class="dropdown-item" asp-page="/Admin/Comment/Index">Comment</a>
+                                        <a class="dropdown-item" asp-page="/Admin/Volunteer/Index">Volunteer</a>
+                                        <a class="dropdown-item" asp-page="/Admin/Meeting/Index">Meetings</a>
 
 
-                            </div>
-                        </li>
-                    </ul>
+                                    </div>
+                                </li>
+
+                            }
+
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+
+        }
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">

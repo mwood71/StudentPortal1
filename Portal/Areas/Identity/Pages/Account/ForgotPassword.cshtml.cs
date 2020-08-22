@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.WebUtilities;
 
 namespace Portal.Areas.Identity.Pages.Account
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "Admin")]
     public class ForgotPasswordModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;

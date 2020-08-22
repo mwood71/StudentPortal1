@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Portal.Areas.Identity.Pages.Account
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "Admin")]
     public class LogoutModel : PageModel
     {
         private readonly SignInManager<IdentityUser> _signInManager;
