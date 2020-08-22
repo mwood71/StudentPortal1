@@ -338,3 +338,7 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/Portal/Data/DbInitializer.cs
+/Portal/Data/IDbInitializer.cs
+/Portal/Properties/ServiceDependencies/StudentPortalWebApplication - Web Deploy/mssql1.arm.json
+/Portal/Properties/ServiceDependencies/StudentPortalWebApplication - Web Deploy/profile.arm.json

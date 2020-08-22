@@ -30,7 +30,7 @@ namespace Portal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddScoped<IDbInitializer, DbInitializer>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
@@ -44,7 +44,7 @@ namespace Portal
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -58,6 +58,7 @@ namespace Portal
                 app.UseHsts();
             }
 
+            dbInitializer.Initialize();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
