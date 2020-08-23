@@ -12,7 +12,7 @@ using Portal.Models;
 
 namespace Portal.Pages
 {
-    [Authorize(Roles = "Admin,Student")]
+    //[Authorize(Roles = "Admin,Student")]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;

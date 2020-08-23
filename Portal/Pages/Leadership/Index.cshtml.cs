@@ -11,7 +11,7 @@ using Portal.Models;
 
 namespace Portal.Pages.Leadership
 {
-    [Authorize(Roles = "Admin,Student")]
+    //[Authorize(Roles = "Admin,Student")]
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _db;

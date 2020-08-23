@@ -3,28 +3,34 @@
 @inject UserManager<IdentityUser> UserManager
 @using Portal.Utility
 
-<ul class="navbar-nav">
-    @if (SignInManager.IsSignedIn(User))
-    {
-        <li class="nav-item">
-            <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Email" title="Manage">Account</a>
-        </li>
-        <li class="nav-item">
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                <button style="color: #5CDB95;font-family: 'Lora', serif;" type="submit" class="nav-link btn btn-link">Logout</button>
-            </form>
-        </li>
-    
-  
-        @if (User.IsInRole(SD.AdminEndUser))
+
+@if (User.IsInRole(SD.StudentEndUser) || User.IsInRole(SD.AdminEndUser))
+{
+    <ul class="navbar-nav">
+        @if (SignInManager.IsSignedIn(User))
         {
             <li class="nav-item">
-                <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Email" title="Manage">Account</a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                    <button style="color: #5CDB95;font-family: 'Lora', serif;" type="submit" class="nav-link btn btn-link">Logout</button>
+                </form>
             </li>
 
+
+            @if (User.IsInRole(SD.AdminEndUser))
+            {
+                <li class="nav-item">
+                    <a style="color: #5CDB95;font-family: 'Lora', serif;" class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                </li>
+
+            }
+
+
+
         }
+    </ul>
 
+}
 
-      
-    }
-</ul>

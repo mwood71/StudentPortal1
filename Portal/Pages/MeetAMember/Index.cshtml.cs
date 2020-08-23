@@ -11,7 +11,7 @@ using Portal.Models.ViewModel;
 
 namespace Portal.Pages.MeetAMember
 {
-    [Authorize(Roles = "Admin,Student")]
+    //[Authorize(Roles = "Admin,Student")]
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _db;

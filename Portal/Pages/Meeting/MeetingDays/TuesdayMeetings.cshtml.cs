@@ -11,7 +11,7 @@ using Portal.Models;
 
 namespace Portal.Pages.Meeting.MeetingDays
 {
-    [Authorize(Roles = "Admin,Student")]
+    //[Authorize(Roles = "Admin,Student")]
     public class TuesdayMeetingsModel : PageModel
     {
         private readonly ApplicationDbContext _db;

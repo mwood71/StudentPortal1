@@ -12,7 +12,7 @@ using Portal.Models.ViewModel;
 
 namespace Portal.Pages.Volunteer
 {
-    [Authorize(Roles = "Admin,Student")]
+    //[Authorize(Roles = "Admin,Student")]
     public class DetailsModel : PageModel
     {
         private readonly ApplicationDbContext _db;
