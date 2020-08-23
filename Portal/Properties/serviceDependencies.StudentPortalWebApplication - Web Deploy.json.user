@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2020-08-22T22:55:30.8164279Z"
+    }
+  },
+  "parameters": {
+    "mssql1.subscriptionId": {
+      "Type": "subscription",
+      "Value": "d3a8cc98-6e2e-41d0-a834-917b4f93e3f8"
+    },
+    "mssql1.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "CRCStudentPortal20200811143022ResourceGroup"
+    }
+  }
+}
