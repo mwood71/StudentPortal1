@@ -115,7 +115,15 @@
 
 
                         }
-                        <a style="background-color: #05386B;color: #EDF5E1;font-family: 'Lora', serif;" class="btn" href="/MeetAMember/CreateComment">Leave a Comment</a>
+
+                        @if (User.IsInRole(Portal.Utility.SD.AdminEndUser) || User.IsInRole(Portal.Utility.SD.StudentEndUser))
+                        {
+                            <a style="background-color: #05386B;color: #EDF5E1;font-family: 'Lora', serif;" class="btn" href="/MeetAMember/CreateComment">Leave a Comment</a>
+                        }
+                        else
+                        {
+                            <p class="text-danger">(Must be logged in to submit comment)</p>
+                        }
 
 
 

@@ -502,8 +502,20 @@
         }
 
     <div class="form-group pt-3">
-        <!--<input style="background-color:#05386B" type="submit" value="Submit" class="btn text-white"/>-->
-        <p class="text-danger">Must be logged in to submit survey.</p>
+
+        @if (User.IsInRole(Portal.Utility.SD.AdminEndUser) || User.IsInRole(Portal.Utility.SD.StudentEndUser))
+        {
+            <input style="background-color:#05386B" type="submit" value="Submit" class="btn text-white" />
+
+        }
+        else
+        {
+            <p class="text-danger">(Must be logged in to submit survey)</p>
+
+        }
+
+
+
 
     </div>
        
